@@ -134,14 +134,14 @@ python main.py
 
 ## Multi-Agent 구조
 
-### DB Agent (`agents/db_agent.py`)
+### 📂DB Agent (`agents/db_agent.py`)
 - **역할**: 데이터 입력, 조회, 카테고리 자동 분류
 - **도구**:
   - `add_expense`: 지출 데이터 추가
   - `get_expenses`: 기간별 지출 조회
   - `classify_category`: LLM 기반 카테고리 분류
 
-### Analysis Agent (`agents/analysis_agent.py`)
+### 📊Analysis Agent (`agents/analysis_agent.py`)
 - **역할**: 통계 분석, 이상치 탐지, 예측
 - **도구**:
   - `get_category_statistics`: 카테고리별 통계
@@ -150,7 +150,7 @@ python main.py
   - `predict_monthly_expense`: 회귀 기반 월 지출 예상
 - **최적화**: 리포트 생성 시 LLM 없이 모든 분석 도구를 직접 호출하여 비용 절감 및 성능 향상 (`get_all_analysis()` 메서드)
 
-### Report Agent (`agents/report_agent.py`)
+### 📝Report Agent (`agents/report_agent.py`)
 - **역할**: 마크다운 리포트 생성
 - **기능**:
   - `generate_report`: 분석 결과를 바탕으로 리포트 생성
@@ -181,12 +181,6 @@ python main.py
 - **scikit-learn**: 회귀 분석
 - **Plotly**: 차트 생성
 
-## 성능 최적화
-
-- **Analysis Agent 최적화**: 리포트 생성 시 LLM을 통한 도구 선택 대신 모든 분석 도구를 직접 호출하여:
-  - OpenAI API 호출 비용 절감
-  - 응답 속도 향상
-  - 모든 분석 결과 보장
 
 ## 주의사항
 
@@ -196,7 +190,3 @@ python main.py
 - SQLite 데이터베이스 파일(`expenses.db`)은 프로젝트 루트에 자동으로 생성됩니다.
 - 초기 실행 시 데이터베이스 테이블이 자동으로 생성됩니다.
 - Windows 환경에서 실행 시 asyncio 이벤트 루프 정책이 자동으로 설정됩니다.
-
-## 라이선스
-
-이 프로젝트는 교육 및 개인 사용 목적으로 제작되었습니다.
